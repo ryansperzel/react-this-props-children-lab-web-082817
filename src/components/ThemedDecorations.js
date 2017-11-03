@@ -3,11 +3,9 @@ import React from 'react'
 
 export default class ThemedDecoration extends React.Component {
   render() {
-    const divsWithTheme = React.Children.map(this.props.children, child => {
-      return React.cloneElement(child, {
-        className: this.props.theme
-      })
-    }
+    const divsWithTheme = React.Children.map(this.props.children, child => (
+      <div className={this.props.theme}>{child}</div>
+    )
   )
     return(
       <div>
@@ -16,3 +14,10 @@ export default class ThemedDecoration extends React.Component {
     )
   }
 }
+
+
+// {
+//   return React.cloneElement(child, {
+//     className: this.props.theme
+//   })
+// }
